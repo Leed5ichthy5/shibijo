@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>가천대 주변 맛집 리스트</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            margin-top: 20%;
+            font-size: 48px;
+        }
+        .search-container {
+            margin-top: 20px;
+        }
+        .search-container input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .table-container {
+            display: none;
+            width: 80%;
+            margin: 20px auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function searchGoogleMaps() {
+            var query = document.getElementById('search-input').value;
+            var url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query);
+            window.open(url, '_blank');
+        }
+
+        function toggleRestaurantList() {
+            var list = document.getElementById('restaurant-list');
+            var button = document.getElementById('toggle-button');
+            if (list.style.display === 'none' || list.style.display === '') {
+                list.style.display = 'block';
+                button.textContent = '맛집 리스트 숨기기';
+            } else {
+                list.style.display = 'none';
+                button.textContent = '맛집 리스트 보기';
+            }
+        }
+    </script>
+</head>
+<body id="top">
+    <h1>가천대 주변 맛집 검색</h1>
+    
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="맛집 이름을 입력하세요">
+        <button onclick="searchGoogleMaps()">검색</button>
+        <button id="toggle-button" onclick="toggleRestaurantList()">맛집 리스트 보기</button>
+    </div>
+
+    <div id="restaurant-list" class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>맛집 이름</th>
+                    <th>평점</th>
+                    <th>주요 메뉴</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/oyu2srQ94K8Q8HQ57" target="_blank">호식당</a></td>
+                    <td>4.4</td>
+                    <td>일식</td>
+                    <td>경기도 성남시 수정구 태평동 5113-12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/xDpGwcPCmxNywjrTA" target="_blank">화리화리</a></td>
+                    <td>4.8</td>
+                    <td>쭈꾸미</td>
+                    <td>경기도 성남시 수정구 성남대로 5678</td>
+                </tr>   
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/W8yXXNZAjcCwMQac6" target="_blank">홍콩반점 0410</a></td>
+                    <td>4.6</td>
+                    <td>짜장면, 짬뽕</td>
+                    <td>경기도 성남시 수정구 성남대로 9101</td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/zG4f597xWawNB6pCA" target="_blank">피자나라 치킨공주</a></td>
+                    <td>4.8</td>
+                    <td>피자, 파스타</td>
+                    <td>경기도 성남시 수정구 성남대로 1121</td>
+                </tr>
+                <tr>
+                    <td><a href="https://goo.gl/maps/someactualgoogledmaplink5" target="_blank">서울삽겹살</a></td>
+                    <td>5.0</td>
+                    <td>숯불구이</td>
+                    <td>경기도 성남시 수정구 태평동 3491-1</td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/61Av1V8i4sv2zEqy8" target="_blank">봉구통닭</a></td>
+                    <td>4.3</td>
+                    <td>치킨</td>
+                    <td>경기도 성남시 수정구 복정동 689-4</td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/S4Qe76PhVMGwnobi9" target="_blank">숯불집</a></td>
+                    <td>4.5</td>
+                    <td>숯불구이</td>
+                    <td>경기도 성남시 수정구 복정동 690번지 그린하우스 1층</td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/EUKnJTUKb92tmmDQ6" target="_blank">준호네부대찌개</a></td>
+                    <td>4.4</td>
+                    <td>부대찌개</td>
+                    <td>수정구 태평동 5113-7번지 1층 111호</td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/RaVVzBgeQapjQWuY6" target="_blank">전주식당</a></td>
+                    <td>4.0</td>
+                    <td>한식</td>
+                    <td>경기도 성남시 수정구 성남대로 1380</td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/aEu6qaMUH47Hsvio8" target="_blank">소미랑</a></td>
+                    <td>4.6</td>
+                    <td>술집</td>
+                    <td>경기도 성남시 수정구 복정동 694-4</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="#top"> 맨위로 </a>
+    </div>
+    
+</body>
+</html>
