@@ -67,15 +67,51 @@
             window.open(url, '_blank');
         }
 
-        function toggleRestaurantList() {
-            var list = document.getElementById('restaurant-list');
-            var button = document.getElementById('toggle-button');
+        function toggleKoreanRestaurantList() {
+            var list = document.getElementById('KRrestaurant-list');
+            var button = document.getElementById('KRtoggle-button');
             if (list.style.display === 'none' || list.style.display === '') {
                 list.style.display = 'block';
-                button.textContent = '맛집 리스트 숨기기';
+                button.textContent = '한식 맛집 리스트 숨기기';
             } else {
                 list.style.display = 'none';
-                button.textContent = '맛집 리스트 보기';
+                button.textContent = '한식 맛집 리스트 보기';
+            }
+        }
+
+        function toggleJapaneseRestaurantList() {
+            var list = document.getElementById('JPrestaurant-list');
+            var button = document.getElementById('JPtoggle-button');
+            if (list.style.display === 'none' || list.style.display === '') {
+                list.style.display = 'block';
+                button.textContent = '일식 맛집 리스트 숨기기';
+            } else {
+                list.style.display = 'none';
+                button.textContent = '일식 맛집 리스트 보기';
+            }
+        }
+
+        function toggleChineseRestaurantList() {
+            var list = document.getElementById('CNrestaurant-list');
+            var button = document.getElementById('CNtoggle-button');
+            if (list.style.display === 'none' || list.style.display === '') {
+                list.style.display = 'block';
+                button.textContent = '중식 맛집 리스트 숨기기';
+            } else {
+                list.style.display = 'none';
+                button.textContent = '중식 맛집 리스트 보기';
+            }
+        }
+
+        function toggledidRestaurantList() {
+            var list = document.getElementById('DIDrestaurant-list');
+            var button = document.getElementById('DIDtoggle-button');
+            if (list.style.display === 'none' || list.style.display === '') {
+                list.style.display = 'block';
+                button.textContent = '양식 맛집 리스트 숨기기';
+            } else {
+                list.style.display = 'none';
+                button.textContent = '양식 맛집 리스트 보기';
             }
         }
     </script>
@@ -86,10 +122,16 @@
     <div class="search-container">
         <input type="text" id="search-input" placeholder="맛집 이름을 입력하세요">
         <button onclick="searchGoogleMaps()">검색</button>
-        <button id="toggle-button" onclick="toggleRestaurantList()">맛집 리스트 보기</button>
+        <br>
+        <br>
+        
+        <button id="KRtoggle-button" onclick="toggleKoreanRestaurantList()">한식 맛집 리스트 보기</button>
+        <button id="JPtoggle-button" onclick="toggleJapaneseRestaurantList()"> 일식 맛집 리스트 보기 </button>
+        <button id="CNtoggle-button" onclick="toggleChineseRestaurantList()">중식 맛집 리스트 보기</button>
+        <button id="DIDtoggle-button" onclick="toggledidRestaurantList()">양식 맛집 리스트 보기</button>
     </div>
 
-    <div id="restaurant-list" class="table-container">
+    <div id="KRrestaurant-list" class="table-container">
         <table>
             <thead>
                 <tr>
@@ -100,30 +142,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/oyu2srQ94K8Q8HQ57" target="_blank">호식당</a></td>
-                    <td>4.4</td>
-                    <td>일식</td>
-                    <td>경기도 성남시 수정구 태평동 5113-12</td>
-                </tr>
+                
                 <tr>
                     <td><a href="https://maps.app.goo.gl/xDpGwcPCmxNywjrTA" target="_blank">화리화리</a></td>
                     <td>4.8</td>
                     <td>쭈꾸미</td>
                     <td>경기도 성남시 수정구 성남대로 5678</td>
                 </tr>   
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/W8yXXNZAjcCwMQac6" target="_blank">홍콩반점 0410</a></td>
-                    <td>4.6</td>
-                    <td>짜장면, 짬뽕</td>
-                    <td>경기도 성남시 수정구 성남대로 9101</td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/zG4f597xWawNB6pCA" target="_blank">피자나라 치킨공주</a></td>
-                    <td>4.8</td>
-                    <td>피자, 파스타</td>
-                    <td>경기도 성남시 수정구 성남대로 1121</td>
-                </tr>
+                
+                
                 <tr>
                     <td><a href="https://goo.gl/maps/someactualgoogledmaplink5" target="_blank">서울삽겹살</a></td>
                     <td>5.0</td>
@@ -165,6 +192,51 @@
         <br>
         <a href="#top"> 맨위로 </a>
     </div>
+
+    <div id="JPrestaurant-list" class="table-container" >
+        <table>
+            <tbody>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/oyu2srQ94K8Q8HQ57" target="_blank">호식당</a></td>
+                    <td>4.4</td>
+                    <td>일식</td>
+                    <td>경기도 성남시 수정구 태평동 5113-12</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="#top"> 맨위로 </a>
+    </div>
     
+    <div id="CNrestaurant-list" class="table-container" >
+        <table>
+            <tbody>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/W8yXXNZAjcCwMQac6" target="_blank">홍콩반점 0410</a></td>
+                        <td>4.6</td>
+                        <td>짜장면, 짬뽕</td>
+                        <td>경기도 성남시 수정구 성남대로 9101</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="#top"> 맨위로 </a>
+    </div>
+
+    <div id="DIDrestaurant-list" class="table-container" >
+        <table>
+            <tbody>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/zG4f597xWawNB6pCA" target="_blank">피자나라 치킨공주</a></td>
+                    <td>4.8</td>
+                    <td>피자, 파스타</td>
+                    <td>경기도 성남시 수정구 성남대로 1121</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="#top"> 맨위로 </a>
+    </div>
+
 </body>
 </html>
